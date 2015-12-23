@@ -39,9 +39,9 @@
             '<p style="text-align:right">' + option.sender + '<br/>' + option.date + '</p>' +
           '</td></tr>' +
           '<tr><td style="margin:0;padding:12px 8px;background-color:#ffdcdc;text-align:center;font-size:0.8em">' +
-            '<span style="color:#ff3b3b">长期广告位:</span>' +
-            '<a href="https://github.com/dyweb/web-stuff/issues" style="color:#ff3b3b">周报投稿/建议</a>' +
-            '<a href="http://git.tongqu.me/dy/guide/tree/master/web/project" style="color:#ff3b3b">项目建立/加入</a>' +
+            '<span style="color:#ff3b3b">长期广告位:</span>&nbsp;' +
+            '<a href="https://github.com/dyweb/web-stuff/issues" style="color:#ff3b3b">周报投稿/建议</a>&nbsp;' +
+            '<a href="http://git.tongqu.me/dy/guide/tree/master/web/project" style="color:#ff3b3b">项目建立/加入</a>&nbsp;' +
             '<a href="http://qa.dongyue.io/" style="color:#ff3b3b">提问/分享</a>' +
           '</td></tr>' +
           '<tr><td style="margin:0;padding:12px 8px;color:#ff3b3b;text-align:center;font-size:0.75em">' +
