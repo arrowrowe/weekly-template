@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Weekly Template</title>
+  </head>
+  <body>
+    <div id="template-box" style="display:flex">
+      <div style="width:50%">
+        <label for="weekly-number">周报期数</label><input id="weekly-number" type="number" v-model="weekly.number" placeholder="n">
+        <label for="weekly-url">周报链接</label><input id="weekly-url" type="text" v-model="weekly.url" placeholder="https://github.com/dyweb/web-stuff/blob/master/weekly/yyyy/mmdd.md">
+        <ul>
+          <li v-for="topic in weekly.topics">
+            <label>热点标题</label><input type="text" v-model="topic.title" placeholder="一个短语概括">
+            <label>热点描述</label><input type="text" v-model="topic.description" placeholder="一句话吐槽">
+            <button v-on:click="weekly.topics.splice($index, 1)">x</button>
+          </li>
+          <li>
+            <button v-on:click="weekly.topics.push({title: '', description: ''})">+</button>
+          </li>
+        </ul>
+        <label for="weekly-editor">本期编辑</label><input id="weekly-editor" type="text" v-model="weekly.editor" placeholder="催稿人的 GitHub ID">
+        <ul>
+          <li v-for="volunteer in weekly.volunteers">
+            <label>投稿者</label><input type="text" v-model="volunteer.name" placeholder="投稿人的 GitHub ID">
+            <button v-on:click="weekly.volunteers.splice($index, 1)">x</button>
+          </li>
+          <li>
+            <button v-on:click="weekly.volunteers.push({name: ''})">+</button>
+          </li>
+        </ul>
+        <textarea v-model="weekly.body" style="width:100%" placeholder="本期特别说明"></textarea>
+        <label for="weekly-sender">本期发送者</label><input id="weekly-sender" type="text" v-model="weekly.sender" placeholder="xxxx的xxx">
+        <label for="weekly-date">发送日期</label><input id="weekly-date" type="text" v-model="weekly.date" placeholder="yyyy/mm/dd">
+        <button id="weekly-copy-html">Copy HTML</button>
+      </div>
+      <div v-html="weekly | parse"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.4/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.5/clipboard.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
