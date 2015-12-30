@@ -12,8 +12,10 @@
     return '<table style="width:100%;background-color:' + colors.bg + ';font-family:\'Microsoft YaHei\',arial,sans-serif">' +
       '<tr><td style="padding:0;padding-top:12px">' +
         '<table style="max-width:600px;margin:0 auto;color:' + colors.body.fg + '">' +
-          '<tr><td style="margin:0;padding:12px 8px;background-color:' + colors.title.bg + ';color:' + colors.title.fg + ';text-align:center;font-size:1.4em">' +
-            'Web Weekly #' + option.number +
+          '<tr><td style="margin:0;padding:12px 8px;background-color:' + colors.title.bg + ';text-align:center;font-size:1.4em">' +
+            '<a href="' + option.url + '" style="color:' + colors.title.fg + ';text-decoration:none">' +
+              'Web Weekly #' + option.number +
+            '</a>' +
           '</td></tr>' +
           '<tr><td style="margin:0;padding:12px 8px;background-color:' + colors.body.bg + '">' +
             '<p>Web 组同学们~</p>' +
