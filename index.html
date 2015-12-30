@@ -7,21 +7,21 @@
     <div id="template-box" style="display:flex">
       <div style="width:50%">
         bg:
-        <input type="color" v-model="colors.bg">;
+        <input type="color" v-model="weekly.colors.bg">;
         title:
-        <input type="color" v-model="colors.title.bg">/
-        <input type="color" v-model="colors.title.fg">;
+        <input type="color" v-model="weekly.colors.title.bg">/
+        <input type="color" v-model="weekly.colors.title.fg">;
         body:
-        <input type="color" v-model="colors.body.bg">/
-        <input type="color" v-model="colors.body.fg">;
+        <input type="color" v-model="weekly.colors.body.bg">/
+        <input type="color" v-model="weekly.colors.body.fg">;
         text:
         a
-        <input type="color" v-model="colors.text.a">,
+        <input type="color" v-model="weekly.colors.text.a">,
         shadow
-        <input type="color" v-model="colors.text.shadow">;
+        <input type="color" v-model="weekly.colors.text.shadow">;
         button:
-        <input type="color" v-model="colors.button.bg">/
-        <input type="color" v-model="colors.button.fg">.
+        <input type="color" v-model="weekly.colors.button.bg">/
+        <input type="color" v-model="weekly.colors.button.fg">.
         <hr/>
         <label for="weekly-number">周报期数</label><input id="weekly-number" type="number" v-model="weekly.number" placeholder="n">
         <label for="weekly-url">周报链接</label><input id="weekly-url" type="text" v-model="weekly.url" placeholder="https://github.com/dyweb/web-stuff/blob/master/weekly/yyyy/mmdd.md">
@@ -49,6 +49,8 @@
         <label for="weekly-sender">本期发送者</label><input id="weekly-sender" type="text" v-model="weekly.sender" placeholder="xxxx的xxx">
         <label for="weekly-date">发送日期</label><input id="weekly-date" type="text" v-model="weekly.date" placeholder="yyyy/mm/dd">
         <button id="weekly-copy-html">Copy HTML</button>
+        <button id="weekly-copy-json">Copy JSON</button>
+        <button v-on:click="import">Import from JSON</button>
       </div>
       <div v-html="weekly | parse"></div>
     </div>
