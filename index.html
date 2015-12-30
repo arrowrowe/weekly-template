@@ -6,6 +6,23 @@
   <body>
     <div id="template-box" style="display:flex">
       <div style="width:50%">
+        bg:
+        <input type="color" v-model="colors.bg">;
+        title:
+        <input type="color" v-model="colors.title.bg">/
+        <input type="color" v-model="colors.title.fg">;
+        body:
+        <input type="color" v-model="colors.body.bg">/
+        <input type="color" v-model="colors.body.fg">;
+        text:
+        a
+        <input type="color" v-model="colors.text.a">,
+        shadow
+        <input type="color" v-model="colors.text.shadow">;
+        button:
+        <input type="color" v-model="colors.button.bg">/
+        <input type="color" v-model="colors.button.fg">.
+        <hr/>
         <label for="weekly-number">周报期数</label><input id="weekly-number" type="number" v-model="weekly.number" placeholder="n">
         <label for="weekly-url">周报链接</label><input id="weekly-url" type="text" v-model="weekly.url" placeholder="https://github.com/dyweb/web-stuff/blob/master/weekly/yyyy/mmdd.md">
         <ul>
@@ -36,6 +53,9 @@
       <div v-html="weekly | parse"></div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.4/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/i18n/jquery.spectrum-zh-cn.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.5/clipboard.min.js"></script>
     <script src="index.js"></script>
   </body>
