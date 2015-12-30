@@ -2,8 +2,6 @@
 
   'use strict';
 
-  // $('input.color')
-
   var parseArray = function (array, fn) {
     return array.map(fn).join('');
   };
@@ -107,6 +105,11 @@
         } catch (e) {}
       }
     }
+  });
+
+  $('input[type=color]').spectrum({
+    preferredFormat: "hex",
+    showInput: true
   });
 
   function newClip(selector, fn) {
