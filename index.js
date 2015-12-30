@@ -101,7 +101,9 @@
       import: function () {
         var raw = prompt('Input JSON');
         try {
-          this.weekly = JSON.parse(raw);
+          if (raw) {
+            this.weekly = JSON.parse(raw);
+          }
         } catch (e) {}
       }
     }
