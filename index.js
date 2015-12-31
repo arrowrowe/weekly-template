@@ -101,16 +101,27 @@
         try {
           if (raw) {
             this.weekly = JSON.parse(raw);
+            Vue.nextTick(Color.render);
           }
         } catch (e) {}
       }
     }
   });
 
-  $('input[type=color]').spectrum({
-    preferredFormat: "hex",
-    showInput: true
-  });
+  var Color = {
+    init: function () {
+      $('input[type=color]').spectrum({
+        preferredFormat: "hex",
+        showInput: true
+      });
+    },
+    render: function () {
+      $('input[type=color]').each(function (i, e) {
+        $(e).spectrum('set', $(e).val());
+      });
+    }
+  }
+  Color.init();
 
   function newClip(selector, fn) {
     new Clipboard(selector, {
