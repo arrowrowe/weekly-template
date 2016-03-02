@@ -100,7 +100,7 @@
         var raw = prompt('Input JSON');
         try {
           if (raw) {
-            this.weekly = JSON.parse(raw);
+            this.weekly = weekly = JSON.parse(raw);
             Vue.nextTick(Color.render);
           }
         } catch (e) {}
@@ -120,7 +120,7 @@
         $(e).spectrum('set', $(e).val());
       });
     }
-  }
+  };
   Color.init();
 
   function newClip(selector, fn) {
